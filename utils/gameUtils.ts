@@ -19,8 +19,13 @@ export function calculateWinner(
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
+    for (let i = 0; i < squares.length; i++) {
+      if (squares[i] === "") {
+        return null;
+      }
+    }
   }
-  return null;
+  return "DRAW";
 }
 
 export function getPlayerNameFromSign(
