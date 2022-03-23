@@ -25,6 +25,9 @@ export function calculateWinner(
       return null;
     }
   }
+  if (squares.length < 9) {
+    return null;
+  }
   return "DRAW";
 }
 
