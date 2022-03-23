@@ -47,18 +47,21 @@ const Home: NextPage = () => {
         >
           <input
             className={styles.input}
+            data-testid="player1"
             value={playerName}
             placeholder={`${EMOJI[Sign.X]} Your Name`}
             onChange={(event) => setPlayerName(event.target.value)}
           />
           <input
             className={styles.input}
+            data-testid="player2"
             value={secondPlayerName}
             placeholder={`${EMOJI[Sign.O]} Opponent Name`}
             onChange={(event) => setSecondPlayerName(event.target.value)}
           />
 
           <button
+            data-testid="start-game"
             className={styles.startButton}
             disabled={isCreating}
             type="submit"
