@@ -49,12 +49,14 @@ const Home: NextPage = () => {
             className={styles.input}
             data-testid="player1"
             value={playerName}
+            required
             placeholder={`${EMOJI[Sign.X]} Your Name`}
             onChange={(event) => setPlayerName(event.target.value)}
           />
           <input
             className={styles.input}
             data-testid="player2"
+            required
             value={secondPlayerName}
             placeholder={`${EMOJI[Sign.O]} Opponent Name`}
             onChange={(event) => setSecondPlayerName(event.target.value)}
