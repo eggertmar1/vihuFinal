@@ -72,6 +72,7 @@ describe("#️⃣ Tic Tac Toe", () => {
     cy.getBySel("cell-8").click();
     cy.getBySel("draw").should("contain", "draw");
   });
+
   it("Should test for player2 to make a move", () => {
     cy.getBySel("player1").type("player1");
     cy.getBySel("player2").type("player2");
