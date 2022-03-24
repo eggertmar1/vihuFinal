@@ -77,12 +77,19 @@ describe("#️⃣ Tic Tac Toe", () => {
     cy.getBySel("player2").type("player2");
     cy.getBySel("start-game").click();
     cy.getBySel("cell-0").click();
-    cy.getBySel("cell-1").click();
-    cy.getBySel("cell-2").click();
-    cy.getBySel("cell-4").click();
-    cy.getBySel("cell-3").click();
-    cy.getBySel("cell-7").click();
-    cy.getBySel("cell-5").click();
-    cy.getBySel("winner").should("contain", "player2");
+    cy.getBySel("nextplayer").should("contain", "player2");
+  });
+
+  it("Should test for player1 to make a move", () => {
+    cy.getBySel("player1").type("player1");
+    cy.getBySel("player2").type("player2");
+    cy.getBySel("start-game").click();
+    cy.getBySel("nextplayer").should("contain", "player1");
+  });
+
+  it("Should test if the all games button works and redirects correctly", () => {
+    cy.contains("See all games").click();
+    cy.getBySel("all-games-title").should("contain", "🎱 All games");
+    cy.url().should("contain", "/game/list");
   });
 });
