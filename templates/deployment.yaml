@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictactoe-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tictactoe-app
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: tictactoe-app
+        version: v1
+    spec:
+      containers:
+        - image: <IMAGE>
+          imagePullPolicy: Always
+          name: tictactoe-app
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              value: <DATABASE_URL>

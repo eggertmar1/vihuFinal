@@ -20,5 +20,7 @@ export const server = setupServer(
     return res(ctx.status(200), ctx.json(game[0]));
   }),
 
-  rest.put("/api/game", (req, res, ctx) => {})
+  rest.put("/api/game", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(game[1]));
+  })
 );
