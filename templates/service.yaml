@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: todo-service
+  name: tictactoe-service
   labels:
-    app: todo-service
+    app: tictactoe-service
 spec:
   type: LoadBalancer
   selector:
-    app: todo-app
+    app: tictactoe-app
   ports:
     - name: http
       protocol: TCP
