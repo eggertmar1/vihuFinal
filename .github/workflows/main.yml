@@ -120,7 +120,7 @@ jobs:
         run: |
           TAG=$(echo $GITHUB_SHA | head -c7) 
           sed -i 's|<IMAGE>|registry.digitalocean.com/todo-app312/tictactoe:'${TAG}'|' $GITHUB_WORKSPACE/templates/deployment.yaml
-          sed -i 's|<DATABASE_URL>|'${{ secrets.DATABASE_URL }}'|' $GITHUB_WORKSPACE/config/deployment.yml
+          sed -i 's|<DATABASE_URL>|'${{ secrets.DATABASE_URL }}'|' $GITHUB_WORKSPACE/templates/deployment.yaml
 
       - name: Save DigitalOcean kubeconfig with short-lived credentials
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 todo-production
