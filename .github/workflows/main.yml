@@ -46,18 +46,16 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: Install dependencies
+      - name: Use Node
         uses: actions/setup-node@v2
         with:
           node-version: "16"
           cache: "npm"
+
+      - name: Install dependencies
         run: npm install
 
       - name: Prisma migrate deploy
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-          cache: "npm"
         run: npx prisma migrate deploy
 
       - name: Cypress run
