@@ -12,7 +12,7 @@ export function WinnerAnnouncement({ winner, game }: Props) {
   if (winner == "DRAW") {
     return (
       <h1 data-testid="draw" className={styles.title}>
-        It's a draw!
+        {"It's a draw!"}
       </h1>
     );
   }

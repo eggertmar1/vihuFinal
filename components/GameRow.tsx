@@ -13,7 +13,7 @@ interface Props {
 export function GameRow({ game }: Props) {
   const winner = calculateWinner(game.moves);
   return (
-    <Link href={`/game/${game.id}`}>
+    <Link href={`/game/${game.id}`} passHref>
       <div className={styles.row}>
         <div className={styles.gameInfo}>
           <div>
