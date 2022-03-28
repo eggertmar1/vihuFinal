@@ -32,9 +32,9 @@ describe("Tests", () => {
     expect(await screen.findByTestId("board")).toBeInTheDocument();
   });
   // test for player1 to win
-  // test("Test if player1 wins", async () => {
+  // test("Test for 4 turns, ❌ player1 should be next", async () => {
   //   const { render } = await getPage({
-  //     route: "/game/113",
+  //     route: "/game/143",
   //   });
   //   render();
 
@@ -42,9 +42,8 @@ describe("Tests", () => {
   //   fireEvent.click(await screen.findByTestId("cell-1"));
   //   fireEvent.click(await screen.findByTestId("cell-3"));
   //   fireEvent.click(await screen.findByTestId("cell-2"));
-  //   fireEvent.click(await screen.findByTestId("cell-6"));
-  //   return expect(await screen.findByTestId("winner")).toHaveTextContent(
-  //     "player1"
+  //   return expect(await screen.findByTestId("nextplayer")).toHaveTextContent(
+  //     "❌ player1"
   //   );
   // });
 });

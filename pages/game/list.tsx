@@ -18,9 +18,12 @@ const GameList = () => {
     <div>
       <h1 data-testid="all-games-title">🎱 All games</h1>
       <div data-testid="all-games-list">
-        {gameList?.map((game) => {
-          return <GameRow key={game.id} game={game} />;
-        })}
+        {gameList
+          ?.slice(0)
+          .reverse()
+          .map((game) => {
+            return <GameRow key={game.id} game={game} />;
+          })}
       </div>
     </div>
   );

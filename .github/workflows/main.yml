@@ -92,7 +92,7 @@ jobs:
         run: npm run test
 
   deploy:
-    # needs: [cypress-run, jest]
+    needs: [cypress-run, jest]
     name: Deploy
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
