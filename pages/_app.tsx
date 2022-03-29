@@ -5,8 +5,8 @@ import styles from "../styles/Home.module.css";
 import { datadogRum } from "@datadog/browser-rum";
 
 datadogRum.init({
-  applicationId: '{{ env("APPLICATION_ID")}}',
-  clientToken: '{{ env("CLIENT_TOKEN")}}',
+  applicationId: "02cd2f7e-a430-4a5a-bbc6-4654eb54eba1",
+  clientToken: "pubdb5bffe41cf3a9dead4352041feabe4c",
   site: "datadoghq.eu",
   service: "tictactoe-app",
   // Specify a version number to identify the deployed version of your application in Datadog
