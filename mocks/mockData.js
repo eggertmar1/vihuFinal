@@ -1,4 +1,4 @@
-export const game = [
+export const games = [
   {
     id: "113",
     player1_name: "player1",
@@ -10,14 +10,14 @@ export const game = [
     id: "123",
     player1_name: "player1",
     player2_name: "player2",
-    moves: ["X", "", "", "", "", "", "", "", ""],
+    moves: ["X", "O", "X", "X", "X", "O", "O", "O", "X"],
     createdAt: new Date(),
   },
   {
     id: "133",
     player1_name: "player1",
     player2_name: "player2",
-    moves: ["X", "O", "", "", "", "", "", "", ""],
+    moves: ["X", "O", "X", "X", "X", "O", "O", "X", "O"],
     createdAt: new Date(),
   },
   {
