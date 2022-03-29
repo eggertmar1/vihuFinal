@@ -2,6 +2,21 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { datadogRum } from "@datadog/browser-rum";
+
+datadogRum.init({
+  applicationId: '{{ env("APPLICATION_ID")}}',
+  clientToken: '{{ env("CLIENT_TOKEN")}}',
+  site: "datadoghq.eu",
+  service: "tictactoe-app",
+  // Specify a version number to identify the deployed version of your application in Datadog
+  // version: '1.0.0',
+  sampleRate: 100,
+  trackInteractions: true,
+  defaultPrivacyLevel: "mask-user-input",
+});
+
+datadogRum.startSessionReplayRecording();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
