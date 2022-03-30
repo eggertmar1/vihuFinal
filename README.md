@@ -33,7 +33,6 @@ The Project is a NextJS application with a Postgres database to keep track of th
 - When deploying it should be deploying a docker image that has been tagged with the commit hash to indicate the version.
 - Add a link to the application running to this README.md file
 
-
 #### **Monitor it!**
 
 - Add Datadog RUM (Real user monitoring) to the application.
@@ -65,16 +64,13 @@ Run the following commands to get started:
 
 `npm install`
 
-`npm run prisma:init` 
+`npm run prisma:init`
 
 `npm run dev`
-
 
 ## Hand in
 
 Add me (arnif) as collaborator to the repository. Add a screenshot of your Datadog dashboard to the README.md.
 Also make sure to send the Github link and a link to the application in Canvas when handing in the assignment.
-
-
 
 Good luck and Have fun :)
