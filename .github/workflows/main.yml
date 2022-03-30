@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  typeAndPretter:
+  typeAndPrettier:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
