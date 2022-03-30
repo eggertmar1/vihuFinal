@@ -119,6 +119,7 @@ describe("Tests", () => {
       });
     });
   });
+
   describe("Cell click validation", () => {
     test("Test for a click on a cell", async () => {
       const { render } = await getPage({

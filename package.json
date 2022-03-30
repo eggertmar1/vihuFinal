@@ -15,7 +15,8 @@
     "test:e2e": "cypress run",
     "jest:cov": "npx jest --coverage",
     "prisma:init": "prisma migrate dev --name init",
-    "prisma:reset": "prisma migrate reset --force"
+    "prisma:reset": "prisma migrate reset --force",
+    "typecheck": "npx tsc --noEmit"
   },
   "dependencies": {
     "@datadog/browser-rum": "^4.7.0",

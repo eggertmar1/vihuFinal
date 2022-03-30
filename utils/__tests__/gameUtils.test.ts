@@ -6,6 +6,7 @@ import {
 } from "../gameUtils";
 import { pepTalks } from "../constants";
 import { Sign } from "../constants";
+import { Game } from "../../lib/gameStore";
 
 describe("GameUtilsTests", () => {
   describe("calculateWinner", () => {
@@ -62,6 +63,9 @@ describe("GameUtilsTests", () => {
       const game: Game = {
         player1_name: "Player1",
         player2_name: "Player2",
+        id: "1",
+        moves: [],
+        createdAt: new Date(),
       };
       expect(getPlayerNameFromSign(Sign.X, game)).toBe("❌ Player1 ");
       expect(getPlayerNameFromSign(Sign.O, game)).toBe("⭕ Player2 ");
@@ -72,6 +76,9 @@ describe("GameUtilsTests", () => {
       const game: Game = {
         player1_name: "",
         player2_name: "",
+        id: "1",
+        moves: [],
+        createdAt: new Date(),
       };
       expect(getPlayerNameFromSign(Sign.X, game)).toBe("❌  ");
       expect(getPlayerNameFromSign(Sign.O, game)).toBe("⭕  ");
