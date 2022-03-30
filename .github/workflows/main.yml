@@ -18,6 +18,7 @@ on:
 
 jobs:
   cypress-run:
+    needs: [typeAndPrettier]
     env:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432
     runs-on: ubuntu-latest
@@ -71,6 +72,7 @@ jobs:
         run: npm run prisma:reset
 
   jest:
+    needs: [typeAndPrettier]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
