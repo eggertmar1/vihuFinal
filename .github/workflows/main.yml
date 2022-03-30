@@ -17,6 +17,39 @@ on:
   workflow_dispatch:
 
 jobs:
+  typeAndPretter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Prettier check
+        uses: rutajdash/prettier-cli-action@v1.0.0
+        with:
+          file_pattern: "src/**/*.ts"
+          config_path: ""
+          ignore_path: "./.prettierignore"
+          prettier_version: "latest"
+          fail_on_error: true
+
   cypress-run:
     needs: [typeAndPrettier]
     env:
@@ -95,39 +128,6 @@ jobs:
 
       - name: Component tests
         run: npm run test
-
-  typeAndPretter:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cache
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Typecheck
-        run: npm run typecheck
-
-      - name: Prettier check
-        uses: rutajdash/prettier-cli-action@v1.0.0
-        with:
-          file_pattern: "src/**/*.ts"
-          config_path: ""
-          ignore_path: "./.prettierignore"
-          prettier_version: "latest"
-          fail_on_error: true
 
   deploy:
     needs: [cypress-run, jest]
