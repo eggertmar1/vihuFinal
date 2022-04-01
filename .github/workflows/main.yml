@@ -123,6 +123,18 @@ jobs:
       - name: Component tests
         run: npm run test
 
+  covupload:
+    runs-on: ubuntu-latest
+    needs: [Prettier, Typecheck]
+    steps:
+      - name: Coverage
+        run: npm test -- --coverage
+
+      - name: Codecoverage upload
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV }}
+
   deploy:
     needs: [cypress-run, jest]
     name: Deploy
