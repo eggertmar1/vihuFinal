@@ -9,4 +9,5 @@ module.exports = {
     "\\.(scss|sass|css)$": "identity-obj-proxy",
   },
   testEnvironment: "jsdom",
+  coveragePathIgnorePatterns: ["node_modules", "mocks"],
 };

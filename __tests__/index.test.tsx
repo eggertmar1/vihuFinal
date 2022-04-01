@@ -14,6 +14,7 @@ import { EMOJI, Sign } from "../utils/constants";
 import { WinnerAnnouncement } from "../components/WinnerAnnouncement";
 import { games } from "../mocks/mockData";
 import Board from "../components/Board";
+import Home from "../pages/index";
 // Good starting point: https://testing-library.com/docs/react-testing-library/example-intro
 
 // TODO setup your mock api here (from the mocks folder)
