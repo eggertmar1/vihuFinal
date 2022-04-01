@@ -4,6 +4,20 @@
 
 ---
 
+## Links and screenshots
+
+[tictactoe.eggertmar.com](http://tictactoe.eggertmar.com) --> if this doesn't work, try the direct link 🍺\
+[164.90.241.137](164.90.241.137)
+
+## Datadog dashboard:
+
+![Datadog Dashboard](images/Datadog.png?raw=true)
+
+The coverage is added to Codecov.
+![CodeCoverage](images/codecov.png?raw=true)
+
+---
+
 This is it. The Big one. Now it's time to put all our learnings into one final project. In this assignment you will be setting up a CD pipeline with all the steps done in previous assignments. You will be setting up a kubernetes cluster to deploy this application to.
 
 What you will be working with is a Tic Tac Toe game that needs maintenance. Some logic is needed to complete the game and it is untested, some libraries are outdated and need to be updated.
@@ -20,24 +34,24 @@ The Project is a NextJS application with a Postgres database to keep track of th
 
 #### **Fix it!**
 
-- Currently the game can only tell when someone wins, but not when there is a draw. Write a test for such function and then implement it and add that to the game.
-- Should the game be playable without the players names ?
-- There is an outdated library there somewhere, can you spot it ?
-- There are no unit tests. Add them.
-- There are no ui integration tests. Add them.
-- There are no e2e tests. Add them.
+- Currently the game can only tell when someone wins, but not when there is a draw. Write a test for such function and then implement it and add that to the game. 💰
+- Should the game be playable without the players names ? 💰
+- There is an outdated library there somewhere, can you spot it ? 💰
+- There are no unit tests. Add them. 💰
+- There are no ui integration tests. Add them. 💰
+- There are no e2e tests. Add them. 💰
 
 #### **Deploy it!**
 
-- Create a Github action that does all the checks we've been doing in previous assignments and then deploys the application to a kubernetes cluster. Please note the checks should be done on any branch but the deployment should only happen on the `main` branch.
-- When deploying it should be deploying a docker image that has been tagged with the commit hash to indicate the version.
-- Add a link to the application running to this README.md file
+- Create a Github action that does all the checks we've been doing in previous assignments and then deploys the application to a kubernetes cluster. Please note the checks should be done on any branch but the deployment should only happen on the `main` branch. 💰
+- When deploying it should be deploying a docker image that has been tagged with the commit hash to indicate the version. 💰
+- Add a link to the application running to this README.md file 💰
 
 #### **Monitor it!**
 
-- Add Datadog RUM (Real user monitoring) to the application.
-- Create a dashboard to monitor the health of the application.
-- Add a screenshot of the dashboard to this README.md file
+- Add Datadog RUM (Real user monitoring) to the application. 💰
+- Create a dashboard to monitor the health of the application. 💰
+- Add a screenshot of the dashboard to this README.md file 💰
 
 ---
 
