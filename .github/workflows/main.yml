@@ -17,14 +17,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  typeAndPrettier:
+  Typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Typecheck
+        run: npm run typecheck
+
+  Prettier:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Typecheck
-        run: npm run typecheck
 
       - name: Prettier check
         uses: rutajdash/prettier-cli-action@v1.0.0
@@ -36,7 +39,7 @@ jobs:
           fail_on_error: true
 
   cypress-run:
-    needs: [typeAndPrettier]
+    needs: [Prettier, Typecheck]
     env:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432
     runs-on: ubuntu-latest
@@ -90,7 +93,7 @@ jobs:
         run: npm run prisma:reset
 
   jest:
-    needs: [typeAndPrettier]
+    needs: [Prettier, Typecheck]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
