@@ -4,6 +4,8 @@
 
 ---
 
+[![codecov](https://codecov.io/gh/eggertmar1/vihuFinal/branch/main/graph/badge.svg?token=ZC8LHOY8I6)](https://codecov.io/gh/eggertmar1/vihuFinal)
+
 ## Links and screenshots
 
 [tictactoe.eggertmar.com](http://tictactoe.eggertmar.com) --> if this doesn't work, try the direct link 🍺\
