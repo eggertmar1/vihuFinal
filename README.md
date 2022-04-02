@@ -16,7 +16,7 @@
 ![Datadog Dashboard](images/Datadog.png?raw=true)
 
 The coverage is added to Codecov.
-![CodeCoverage](images/codecov.png?raw=true)
+![CodeCoverage](images/Codecov.png?raw=true)
 
 ---
 
